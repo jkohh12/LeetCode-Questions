@@ -23,8 +23,37 @@ public:
         
         
         //O(logn) approach
-        //first occurence is at even index, odd occurence is at odd index
-//         int high = nums.size()-1;
+        //always first occurence is at even index, odd occurence is at odd index
+        
+        int start = 0;
+        int end = nums.size() - 1;
+        
+        while (start <= end) {
+            int mid = (start + end)/2;
+            if(start == end) {
+                return nums[start];
+            }
+            else if(mid % 2 != 0) { //odd
+                if(nums[mid] == nums[mid-1]) { // if its odd and index before it equals it, then its in order before mid point in array, so check right side 
+                    start = mid + 1;
+                }
+                else { //not in order so it has to be on the left side
+                    end = mid - 1;
+                }
+            }
+            else { //even
+                if(nums[mid] == nums[mid + 1]) { //if its even and index after it equals it, then its in order before mid point in array, so check right side 
+                    start = mid + 2;
+                }
+                else {
+                    end = mid;
+                }
+            }
+        }
+        return -1;
+        
+        //other approach
+        //         int high = nums.size()-1;
 //         int low = 0;
 //         int mid;
         
@@ -53,33 +82,6 @@ public:
 //             }
 //         }
 //         return -1;
-        
-        int start = 0;
-        int end = nums.size() - 1;
-        
-        while (start <= end) {
-            int mid = (start + end)/2;
-            if(start == end) {
-                return nums[start];
-            }
-            else if(mid % 2 != 0) { //odd
-                if(nums[mid - 1] == nums[mid]) {
-                    start = mid + 1;
-                }
-                else {
-                    end = mid - 1;
-                }
-            }
-            else {
-                if(nums[mid] == nums[mid + 1]) {
-                    start = mid + 2;
-                }
-                else {
-                    end = mid;
-                }
-            }
-        }
-        return -1;
         
     }
 };
