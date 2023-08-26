@@ -8,10 +8,10 @@ public:
         }
         
         for(auto c : ransomNote) { //loops through characters in ransomNote 
-            if(/* dictionary.find(c) == dictionary.end() || */dictionary[c] <= 0) { //
-                return false;
+            if(/* dictionary.find(c) == dictionary.end() || */dictionary[c] <= 0) { //dictionary.find(c) == dictionary.end() is edge case, but main thing is if dictionary[c] <= 0, which would mean that the character isnt present, meaning false
+                return false; 
             }
-            dictionary[c]--;
+            dictionary[c]--; //if it does exist, it means that dictionary[c] >= 1
         }
         return true;
     }
