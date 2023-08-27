@@ -24,16 +24,17 @@ public:
         
         int count = 0;
         for(int i = 0; i < n; i++) {
-            count = bSearch(mat[i]);
-            vp.push_back({count,i});
+            count = bSearch(mat[i]); //count number of 1's
+            vp.push_back({count,i}); //push into vector of pairs the count, and also index
         }
         
-        sort(vp.begin(),vp.end());
+        sort(vp.begin(),vp.end()); //sort the pair by count
         
         vector<int> ans;
         
         for(int i = 0; i < k; i++) {
-            ans.push_back(vp[i].second);
+            ans.push_back(vp[i].second); //push back only the index, now its in order
+            
         }
 
         return ans;
