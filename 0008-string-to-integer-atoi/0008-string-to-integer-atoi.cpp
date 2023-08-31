@@ -29,7 +29,7 @@ public:
         while(index < s.size() && (s[index] >= '0' && s[index] <= '9')) {
 
             int digit = (s[index] - '0') * sign; //done to convert string into digit
-            if(sign == 1  && (ans > INT_MAX/10 ||(ans==INT_MAX/10 && digit>INT_MAX%10))) {
+            if(sign == 1  && (ans > INT_MAX/10 ||(ans==INT_MAX/10 && digit>INT_MAX%10))) { // if ans is greater than INT_MAX or if ans is equal to INT_MAX and the last digit is greater than INT_MAX % 10
                 return INT_MAX;    
             }
             if(sign == -1 && (ans < INT_MIN/10 || (ans==INT_MIN/10 && digit<INT_MIN%10))) {
