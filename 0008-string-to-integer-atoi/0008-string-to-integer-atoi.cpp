@@ -11,12 +11,12 @@ public:
         int index = 0;
         
         
-        for(int i = index; i < s.size(); i++) {
+        for(int i = index; i < s.size(); i++) { //count whitespaces
             if(s[index] == ' ') {
                 index++;
             }
         }
-        if(s[index] == '-' || s[index] == '+') {
+        if(s[index] == '-' || s[index] == '+') { //check for whether its negative or positive number, can also use boolean
             if(s[index] == '-') {
                 sign = -1;
             }
