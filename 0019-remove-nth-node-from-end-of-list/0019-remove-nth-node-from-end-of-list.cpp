@@ -14,7 +14,7 @@ public:
         int count = 0;
         int i = 1;
         ListNode* iter = head; //so that we aren't using the header directly
-        while(iter != NULL) {
+        while(iter != NULL) { // how many nodes there are
             iter = iter->next;
             count++;
         }
@@ -30,5 +30,6 @@ public:
         
         return head;
         
+
     }
 };
