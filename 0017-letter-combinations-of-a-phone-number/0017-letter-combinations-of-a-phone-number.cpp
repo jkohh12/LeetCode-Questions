@@ -14,8 +14,8 @@ public:
         q.push(""); //intially empty string pushed in
         
         while(!q.empty()) {
-            string curr = q.front();
-            q.pop();
+            string curr = q.front(); //front of queue
+            q.pop(); //pop queue, this is how it builds everything after the latter "a"
             
             if(curr.length() == digits.length()) { //checks if combination is equal length to digits, if it is, that means combination has been formed
                 ans.push_back(curr);
@@ -29,6 +29,10 @@ public:
             }
         }
         return ans;
+        
+        
+        
+        
         
     }
 };
