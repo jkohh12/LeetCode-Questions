@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<string> letterCombinations(string digits) {
-        //USES DFS
+        //USES BFS
         vector<string> phone {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         
         if(digits.empty()) {
