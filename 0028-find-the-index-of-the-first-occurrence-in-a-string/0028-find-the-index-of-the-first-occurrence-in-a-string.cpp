@@ -13,4 +13,13 @@ public:
         }
         return -1;
     }
+    
+    //another way to do
+        // size_t found = haystack.find(needle);
+        // if(found != string::npos) {
+        //     return found;
+        // }
+        // else {
+        //     return -1;
+        // }
 };
