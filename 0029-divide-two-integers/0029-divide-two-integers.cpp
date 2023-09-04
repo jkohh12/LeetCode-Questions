@@ -21,7 +21,7 @@ public:
             
             a = a - (b<<q); // In other words, it calculates b times 2 raised to the power of q. This is the value of b multiplied by the current quotient digit.
         }
-        if(ans == (1<<31) and isPositive) { // 1<<31 == 2^31
+        if(ans == (1<<31) and isPositive) { // 1<<31 == 2^31, dont really understand this part, since we did abs, we always get positive result
             return INT_MAX;
         }
 
