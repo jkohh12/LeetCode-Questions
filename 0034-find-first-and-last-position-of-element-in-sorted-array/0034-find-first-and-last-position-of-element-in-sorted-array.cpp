@@ -11,7 +11,7 @@ public:
         while(i <= j) {
             int mid = (i+j)/2;
             if(nums[mid] == target) {
-                int temp = mid;
+                int temp = mid; //keep track of where mid is, since we are changing it in next line
                 while(mid > 0 && nums[mid-1] == target) { //iterating left side of mid until target value is found
                                                           //basically if nums[mid] == target, we found the target, now found all numbers before that are also target, and mark the first one as the start.
                     mid--;
