@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string countAndSay(int n) {
+        if(n == 1) {
+            return "1"; //base case
+        }
+        
+        string s = countAndSay(n-1);
+        string ans = "";
+        for(int i = 0; i < s.size(); i++) {
+            int count = 1;
+            while(i < (s.size()-1) && (s[i] == s[i+1])) {
+                i++;
+                count++;
+            }
+            ans.append(to_string(count) + s[i]); //append is like push for strings
+        }
+        return ans;
+    }
+    
+};
