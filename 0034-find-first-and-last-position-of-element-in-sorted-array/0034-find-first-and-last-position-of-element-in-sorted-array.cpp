@@ -12,12 +12,12 @@ public:
             int mid = (i+j)/2;
             if(nums[mid] == target) {
                 int temp = mid; //keep track of where mid is, since we are changing it in next line
-                while(mid > 0 && nums[mid-1] == target) { //iterating left side of mid until target value is found
+                while(mid > 0 && nums[mid-1] == nums[mid]) { //iterating left side of mid until target value is found
                                                           //basically if nums[mid] == target, we found the target, now found all numbers before that are also target, and mark the first one as the start.
                     mid--;
                 }
                 start = mid;
-                while(temp < nums.size()-1 && nums[temp+1] == target) { //temp is equal to mid, basically doing the same thing as before, but this time go to the right and mark the last element equal to target as end
+                while(temp < nums.size()-1 && nums[temp+1] == nums[temp]) { //temp is equal to mid, basically doing the same thing as before, but this time go to the right and mark the last element equal to target as end
                     temp++;
                 }
                 end = temp;
@@ -39,5 +39,8 @@ public:
         ans.push_back(-1);
         return ans;
         //if the targets are never found, we get this situation
+        
+   
+  
     }
 };
