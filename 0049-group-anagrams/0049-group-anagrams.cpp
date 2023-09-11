@@ -9,7 +9,7 @@ public:
         for(int i = 0; i < strs.size(); i++) {
             string str = strs[i];
             sort(strs[i].begin(), strs[i].end()); //sorts in lexicographical order
-            M[strs[i]].push_back(str); //key is strs[i], and unsorted str is pushed into M
+            M[strs[i]].push_back(str); //key is strs[i], and unsorted str is pushed into M, pushing back into vector that the map contains
             //unordered map contains groups of anagrams, where keys are the sorted strings, and values are vectors of original unsorted strings that are anagrams of each other.
         }
         
