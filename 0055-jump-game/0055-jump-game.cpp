@@ -18,7 +18,7 @@ public:
                 //final element is nums[0], same as above so its fine
             }
         }
-        if(minJump == 0) {
+        if(minJump == 0) { //only returns true if minJump is 0 which it should be set to if it was able to jump to the end
             return true;
         }
         else {
