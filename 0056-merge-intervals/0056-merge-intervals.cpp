@@ -12,8 +12,8 @@ public:
         //Traverse the whole vector .Takes O(n) time
         for(int i=1;i<interval.size();i++)
         {
-            //if intevals are overlapping
-            if(result[j][1]>=interval[i][0]) result[j][1]=max(result[j][1],interval[i][1]);
+            //if intervals are overlapping
+            if(result[j][1]>=interval[i][0]) result[j][1]=max(result[j][1],interval[i][1]); //updates end point of the last merged interval to be the maximum of its current end point and the end point of the current interval
             //else they are not overlapping
             else
             {
