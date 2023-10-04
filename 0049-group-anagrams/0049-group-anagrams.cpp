@@ -4,20 +4,20 @@ public:
         if(strs.size() == 1) {
             return {{strs[0]}};
         }
+        
         vector <vector<string>> ans;
-        unordered_map <string, vector<string>> M;
+        unordered_map <string, vector<string>> mp;
         for(int i = 0; i < strs.size(); i++) {
             string str = strs[i];
-            sort(strs[i].begin(), strs[i].end()); //sorts in lexicographical order
-            M[strs[i]].push_back(str); //key is strs[i], and unsorted str is pushed into M, pushing back into vector that the map contains
-            //unordered map contains groups of anagrams, where keys are the sorted strings, and values are vectors of original unsorted strings that are anagrams of each other.
+            sort(strs[i].begin(), strs[i].end());
+            mp[strs[i]].push_back(str);
+            
         }
         
-        for(auto i : M) {
-            
+        for(auto i : mp) {
             ans.push_back(i.second);
-            
         }
         return ans;
+
     }
 };
